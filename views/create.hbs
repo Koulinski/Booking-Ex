@@ -1,0 +1,37 @@
+<section id="create-section" class="">
+    <h1 class="item">Add your Place</h1>
+    <main class="item padded align-centre">
+        <form action="/create" method="post" class="layout left large">
+            {{#if error}}
+            <div class="error-box">
+                {{#each error}}
+                <p>{{this}}</p>
+                {{/each}}
+            </div>
+            {{/if}}
+            <div class="col aligned">
+                <label><span>Name: </span><input type="text" name="name"></label>
+                <label><span>City: </span><input type="text" name="city"></label>
+                <label><span>Beds: </span><input type="number" name="beds"></label>
+                <label><span>Price per night: </span><input type="number" name="price"></label>
+                <label><span>Image Url: </span><input type="text" name="imgUrl"></label>
+            </div>
+
+            <div class="content pad-med align-centre vertical">
+                <label>
+                    <span>Description: </span>
+                    <textarea name="description" cols="30" rows="10"></textarea>
+                </label>
+
+                <div class="align-centre">
+                    <input class="action" type="submit" value="Publish Item">
+                </div>
+            </div>
+        </form>
+
+        <a href="/catalog">Back to Catalog</a>
+        <a href="/">Back to Home</a>
+
+    </main>
+
+</section>

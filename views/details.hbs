@@ -1,0 +1,16 @@
+<section>
+<h1>Details</h1>
+<main>
+    <ul>
+       {{#with acc}}
+       <h1>{{name}} - Details</h1>
+       <img src="{{imgUrl}}" alt="Pictures" style="float:left;height:400px;width:400px">
+       <p>Description: {{description}}</p>
+       <p>City: {{city}}</p>
+       <p>Beds: {{beds}}</p>
+       <p>Price: ${{price}}</p>
+       <p><a href="/catalog">Back to Catalog</a></p>
+       {{/with}}
+    </ul>
+</main>
+</section>

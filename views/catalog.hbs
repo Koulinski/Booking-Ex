@@ -1,0 +1,41 @@
+<section id="catalog-section" class="spaced">
+    <h1 class="item">All Accommodations</h1>
+
+    <main class="item pad-large align-centre">
+
+        <form class="layout left large" method="get">
+            <div class="col aligned">
+                <label for=""><span>Terms: </span><input name="search" value="{{search}}"></label>
+                <label for=""><span>Location: </span><input name="city" value="{{city}}"></label>
+            </div>
+            <div class="content aligned">
+                <label for=""><span>Price From - </span><input type="number" name="fromPrice" min="1" max="1000"
+                        value="{{fromPrice}}"></span></label>
+                <label for=""><span>Price To - </span><input type="number" name="toPrice" min="1" max="1000"
+                        value="{{toPrice}}"></label>
+            </div>
+            <input class="action" type="submit" value="Search">
+        </form>
+
+    </main>
+
+    {{#if rooms }}
+
+    <ul class="catalog cards">
+        {{#each rooms}}
+        {{> roomCard}}
+        {{/each}}
+    </ul>
+
+    {{else}}
+
+    <main class="item pad-large align-centre">
+        <p>Nothing has been listed yet. Be the first!</p>
+        <div>
+            <a class="action" href="/create">Host Accomodation</a>
+        </div>
+    </main>
+
+    {{/if}}
+
+</section>
