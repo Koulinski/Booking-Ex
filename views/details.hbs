@@ -1,16 +1,40 @@
-<section>
-<h1>Details</h1>
-<main>
-    <ul>
-       {{#with acc}}
-       <h1>{{name}} - Details</h1>
-       <img src="{{imgUrl}}" alt="Pictures" style="float:left;height:400px;width:400px">
-       <p>Description: {{description}}</p>
-       <p>City: {{city}}</p>
-       <p>Beds: {{beds}}</p>
-       <p>Price: ${{price}}</p>
-       <p><a href="/catalog">Back to Catalog</a></p>
-       {{/with}}
-    </ul>
-</main>
+<section id="catalog-section">
+    {{#with acc}}
+    <h1 class="item">{{name}}</h1>
+    <div class="item padded">
+
+        <main class="layout right large">
+
+            <div class="col">
+
+                <img src="{{imgUrl}}" class="img-large">
+
+            </div>
+
+            <div class="content pad-med">
+
+                <p>City: <strong>{{city}}</strong></p>
+                <p>{{description}}</p>
+
+                <div class="align-center">
+                    <div>
+                        Price per night: <strong>{{price}}€</strong>
+                    </div>
+                    <ul class="catalog">
+                        {{#each facilities}}
+                        <li>{{label}} <img class="facility-icon" src="{{iconUrl}}"></li>
+                        {{/each}}
+                    </ul>
+
+                    <a class="action cta" href="/facility/{{_id}}/decorateRoom">Edit Facilities</a>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>Listed by (TODO add owner)
+            <a href="/catalog">Back to Catalog</a>
+        </footer>
+    </div>
+    {{/with}}
 </section>
