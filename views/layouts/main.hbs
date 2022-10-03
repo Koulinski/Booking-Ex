@@ -4,27 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <title>{{title}}</title>
-    <link rel="stylesheet" href="/static/layout.css">
+    <link rel="stylesheet" href="/static/site.css">
 </head>
 
 <body>
     <div id="page-content">
         <header>
-            <nav class="main-nav nav-right">
+            <a href="/" class="title-logo">
+                <img src="/static/assets/logo.png">
+                <span>Koulinski Booking</span>
+            </a>
+            <nav class="main-nav nav-mid">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/catalog">Catalog</a></li>
-                    <li><a href="/create">Create</a></li>
-                    <li><a href="/about">About</a></li>
+                    <li>
+                        <a href="/catalog">Browse Accomodation</a>
+                    </li>
+                    <li>
+                        <a href="/create">Host</a>
+                    </li>
+                    <li>
+                        <a href="/facility/create">Create Facility</a>
+                    </li>
                 </ul>
             </nav>
         </header>
+
         <main>
             {{{body}}}
         </main>
-        <footer>
-            Emil Koulinski &copy; 2022
-        </footer>
+
+        <footer>Emil Koulinski &copy; 2022</footer>
     </div>
 </body>
 
