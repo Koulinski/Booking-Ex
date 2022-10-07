@@ -22,18 +22,18 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    const accId = req.params.id;
-    const acc = await getById(accId);
+    const roomId = req.params.id;
+    const room = await getById(roomId);
 
-    if (acc) {
+    if (room) {
         res.render('details', {
             title: 'Accomodation Details',
-            acc
+            room
         });
     } else {
         res.render('roomNotFound', {
             title: 'Room Not Found',
-            accId
+            roomId
         });
     }
 
