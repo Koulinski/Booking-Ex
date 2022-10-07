@@ -1,0 +1,35 @@
+<section id="decorate-section">
+
+    <h1 class="item">{{room.name}}</h1>
+    <div class="item padded">
+
+        <main class="layout right large">
+
+            <div class="col">
+
+                <img src="{{room.imgUrl}}" class="img-large">
+
+            </div>
+
+            <div class="content pad-med">
+
+                <p>Facilities: </p>
+
+                <form action="/facility/{{room._id}}/decorateRoom" method="post">
+                    <ul class="catalog">
+                        {{#each facilities}}
+                        <li><label for=""><input type="checkbox" name="{{_id}}"> {{label}} <img class="facility-icon"
+                                    src="{{iconUrl}}" alt="WiFi Image"></label></li>
+                        {{/each}}
+                    </ul>
+                    <button class="action cta">Confirm Facilities</button>
+                </form>
+
+
+            </div>
+        </main>
+        <footer>
+            <a href="/catalog/{{_id}}">Back to Room</a>
+        </footer>
+    </div>
+</section>
