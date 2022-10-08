@@ -2,19 +2,25 @@
 
     <h1 class="item">New Facility</h1>
 
-    <main class="item padded align-centre">
+    <div class="padded">
+        <main class="item padded align-centre">
 
-        <form action="/facility/create" method="post" class="layout large aligned">
+            <form action="/facility/create" method="post" class="layout large aligned">
 
-            <label><span>Label: </span><input type="text" name="label"></label>
-            <label><span>Icon Url: </span><input type="text" name="iconUrl"></label>
+                <label><span>Label: </span><input type="text" name="label"></label>
+                <label><span>Icon Url: </span><input type="text" name="iconUrl"></label>
 
-            <div class="align-centre">
-                <input class="action" type="submit" value="Publish Item">
-            </div>
+                <div class="align-centre">
+                    <input class="action" type="submit" value="Publish Item">
+                </div>
 
-        </form>
+            </form>
 
-    </main>
+        </main>
 
+        <footer>
+            <a href="/catalog">Back to Catalog</a>
+            <a href="/">Back to Home</a>
+        </footer>
+    </div>
 </section>
