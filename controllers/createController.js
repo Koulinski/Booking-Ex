@@ -2,22 +2,22 @@ const { create } = require('../services/roomService');
 
 const router = require('express').Router();
 
+
 router.get('/', (req, res) => {
     res.render('create', {
-        title: 'Host New Accommodation'
+        title: 'Host New Accomodation'
     });
 });
-router.post('/', async (req, res) => {
 
+router.post('/', async (req, res) => {
     try {
-       const result = await create(req.body);
+        const result = await create(req.body, req.user._id);
         res.redirect('/catalog/' + result._id);
-    } catch (err) {
+    } catch(err) {
         res.render('create', {
             title: 'Request Error',
             error: err.message.split('\n')
         });
-       // console.log(req.body);
     }
 });
 

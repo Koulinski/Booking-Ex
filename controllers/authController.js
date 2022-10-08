@@ -2,6 +2,7 @@ const { login, register } = require('../services/authService');
 
 const authController = require('express').Router();
 
+
 authController.get('/login', (req, res) => {
     res.render('login', {
         title: 'Login'
@@ -10,10 +11,7 @@ authController.get('/login', (req, res) => {
 
 authController.post('/login', async (req, res) => {
     try {
-        if (req.body.username.trim() == '' || req.body.password.trim() == '') {
-            throw new Error('All fields are mandatory');
-        }
-        const result = await login(req.body.username.trim(), req.body.password.trim());
+        const result = await login(req.body.username, req.body.password);
         attachToken(req, res, result);
         res.redirect('/');
     } catch (err) {
@@ -33,10 +31,10 @@ authController.get('/register', (req, res) => {
 authController.post('/register', async (req, res) => {
     try {
         if (req.body.username.trim() == '' || req.body.password.trim() == '') {
-            throw new Error('All field are required');
+            throw new Error('All fields are required!');
         }
         if (req.body.password.trim() != req.body.repass.trim()) {
-            throw new Error('Passwords do not match');
+            throw new Error('Passwords don\'t match!');
         }
         const result = await register(req.body.username.trim(), req.body.password.trim());
         attachToken(req, res, result);
@@ -49,9 +47,15 @@ authController.post('/register', async (req, res) => {
     }
 });
 
+authController.get('/logout', (req, res) => {
+    res.clearCookie('jwt');
+    return res.redirect('/');
+});
+
 function attachToken(req, res, data) {
     const token = req.signJwt(data);
-    res.cookie('jwt', token, { maxAge: '440000000000' });
+    res.cookie('jwt', token, { maxAge: 14400000 });
 }
+
 
 module.exports = authController;

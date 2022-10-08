@@ -1,6 +1,6 @@
-
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
+
 
 async function register(username, password) {
     // check if username is taken
@@ -41,9 +41,9 @@ async function login(username, password) {
         username: user.username,
         roles: user.roles
     };
-};
+}
 
 module.exports = {
-    login,
-    register
+    register,
+    login
 };

@@ -12,8 +12,11 @@
         <header>
             <a href="/" class="title-logo">
                 <img src="/static/assets/logo.png">
-                <span>Koulinski Booking</span>
+                <span>SoftUni Sleepover</span>
             </a>
+            {{#if hasUser}}
+            <span>Welcome, {{username}}</span>
+            {{/if}}
             <nav class="main-nav nav-mid">
                 <ul>
                     <li>
@@ -26,7 +29,7 @@
                     <li>
                         <a href="/facility/create">Create Facility</a>
                     </li>
-                     <li>
+                    <li>
                         <a href="/auth/logout">Logout</a>
                     </li>
                     {{else}}

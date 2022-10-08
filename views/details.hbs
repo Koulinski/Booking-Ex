@@ -26,15 +26,17 @@
                         {{/each}}
                     </ul>
 
-                    <a class="action cta" href="/facility/{{_id}}/decorateRoom">Edit Facilities</a>
+                    {{#if isOwner}}
+                    <a class="action" href="/room/{{_id}}/edit">Edit</a>
+                    <a class="action" href="/facility/{{_id}}/decorateRoom">Facilities</a>
+                    <a class="action" href="/room/{{_id}}/delete">Delete</a>
+                    {{/if}}
                 </div>
 
             </div>
         </main>
 
-        <footer>Listed by (TODO add owner)
-            <a href="/catalog">Back to Catalog</a>
-        </footer>
+        <footer>Listed by (TODO add owner)</footer>
     </div>
     {{/with}}
 </section>

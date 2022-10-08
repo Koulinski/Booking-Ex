@@ -1,4 +1,3 @@
-
 function hasUser() {
     return (req, res, next) => {
         if (req.user != undefined) {
@@ -32,5 +31,5 @@ function hasRole(role) {
 module.exports = {
     hasUser,
     isGuest,
-   // hasRole
+    hasRole
 };
