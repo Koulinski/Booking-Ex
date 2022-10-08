@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 
 const defaultTitle = require('../middlewares/defaultTitle');
 const auth = require('../middlewares/auth');
+const userNav = require('../middlewares/userNav');
 
 const jwtSecret = 'super secter';
 
@@ -21,6 +22,7 @@ module.exports = (app) => {
     app.use('/static', express.static('static'));
     app.use(cookieParser());
     app.use(auth(jwtSecret));
+    app.use(userNav());
 
     app.use(defaultTitle('HomeMade AirBNB'));
 };
