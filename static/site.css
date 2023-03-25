@@ -64,7 +64,7 @@ html {
 
 .error-box {
     color: red;
-    padding: 16px 16px;
+    padding: 16px;
     margin: 32px;
     background-color: hsl(var(--action-color), var(--action-s), 25%);
     box-shadow: var(--shadow);
